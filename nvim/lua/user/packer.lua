@@ -56,7 +56,6 @@ return packer.startup(function(use)
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
-      -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
@@ -89,6 +88,14 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
 
   use "lewis6991/gitsigns.nvim"
+
+  use {
+      "nvim-tree/nvim-tree.lua",
+      requires = {
+          "nvim-tree/nvim-web-devicons"-- optional, for file icons
+      },
+      tag = "nightly" -- optional, updated every week. (see issue #1193)
+  }
 
   if PACKER_BOOTSTRAP then
       require("packer").sync()
