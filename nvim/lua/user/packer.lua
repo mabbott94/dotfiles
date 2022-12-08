@@ -53,12 +53,15 @@ return packer.startup(function(use)
   })
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use {
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       -- or                            , branch = '0.1.x',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+  end}
 
    -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -84,6 +87,8 @@ return packer.startup(function(use)
   }
   use "p00f/nvim-ts-rainbow"
   use "nvim-treesitter/playground"
+
+  use "lewis6991/gitsigns.nvim"
 
   if PACKER_BOOTSTRAP then
       require("packer").sync()
