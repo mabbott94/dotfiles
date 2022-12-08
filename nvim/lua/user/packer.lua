@@ -88,6 +88,10 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
 
   use "lewis6991/gitsigns.nvim"
+  use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   use {
       "nvim-tree/nvim-tree.lua",
