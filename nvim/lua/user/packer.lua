@@ -46,9 +46,9 @@ return packer.startup(function(use)
   use 'wbthomason/packer.nvim'
   use({
     'rose-pine/neovim',
-    as = 'rose-pine',
+    as = 'rose-pine-moon',
     config = function()
-        vim.cmd('colorscheme rose-pine')
+        vim.cmd('colorscheme rose-pine-moon')
     end
   })
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
