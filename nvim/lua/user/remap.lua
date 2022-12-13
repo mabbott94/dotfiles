@@ -14,6 +14,6 @@ nnoremap("<leader>ff", "<cmd>Telescope find_files<CR>")
 nnoremap("<leader>fg", "<cmd>Telescope live_grep<CR>")
 nnoremap("<leader>fb", "<cmd>Telescope buffers<CR>")
 nnoremap("<leader>fh", "<cmd>Telescope help_tags<CR>")
-nnoremap("<leader>g", "<cmd> lua _LAZYGIT_TOGGLE()<CR>")
-
+--nnoremap("<leader>g", "<cmd> lua _LAZYGIT_TOGGLE()<CR>")
+vim.api.nvim_set_keymap("n", "<leader>g", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", {noremap = true, silent = true})
 nnoremap("<leader>c", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>")
