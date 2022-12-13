@@ -44,13 +44,16 @@ packer.init {
 return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  use({
-    'rose-pine/neovim',
-    as = 'rose-pine-moon',
-    config = function()
-        vim.cmd('colorscheme rose-pine-moon')
-    end
-  })
+  --use({
+    --'rose-pine/neovim',
+    --as = 'rose-pine-moon',
+    --config = function()
+     --   vim.cmd('colorscheme rose-pine-moon')
+   -- end
+  --})
+  --
+  use({"mabbott94/rose-pine", as = "rose-pine"})
+  use "numToStr/Comment.nvim"
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
@@ -100,6 +103,7 @@ return packer.startup(function(use)
       },
       tag = "nightly" -- optional, updated every week. (see issue #1193)
   }
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   if PACKER_BOOTSTRAP then
       require("packer").sync()
