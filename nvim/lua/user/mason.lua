@@ -24,7 +24,7 @@ local on_attach = function(_, bufnr)
   end
 end
 
-local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls', 'terraformls', 'svelte'}
+local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver', 'sumneko_lua', 'gopls', 'terraformls', 'svelte', 'eslint', 'tsserver'}
 
 require('mason-lspconfig').setup {
   ensure_installed = servers,
@@ -59,3 +59,12 @@ require('lspconfig').sumneko_lua.setup {
   },
 }
 
+require('lspconfig').tsserver.setup {
+    settings = {
+        completions = {
+            completeFunctionCalls = true
+        }
+    }
+}
+
+require('lspconfig').svelte.setup{}
