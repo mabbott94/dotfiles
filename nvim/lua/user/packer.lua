@@ -44,14 +44,6 @@ packer.init {
 return packer.startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
-  --use({
-    --'rose-pine/neovim',
-    --as = 'rose-pine-moon',
-    --config = function()
-     --   vim.cmd('colorscheme rose-pine-moon')
-   -- end
-  --})
-  --
   use({"mabbott94/rose-pine", as = "rose-pine"})
   use "numToStr/Comment.nvim"
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -61,6 +53,7 @@ return packer.startup(function(use)
       'nvim-telescope/telescope.nvim', tag = '0.1.0',
       requires = { {'nvim-lua/plenary.nvim'} }
   }
+
   use {"akinsho/toggleterm.nvim", tag = '*', config = function()
       require("toggleterm").setup()
   end}
@@ -73,14 +66,14 @@ return packer.startup(function(use)
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
 
-
       -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
+  use 'neovim/nvim-lspconfig' -- LSP
+  use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
 
    -- Treesitter
   use {
@@ -103,6 +96,7 @@ return packer.startup(function(use)
       },
       tag = "nightly" -- optional, updated every week. (see issue #1193)
   }
+
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   if PACKER_BOOTSTRAP then
