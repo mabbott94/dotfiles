@@ -16,4 +16,3 @@ vim.opt.showmode = true
 vim.opt.ignorecase = true
 vim.opt.backup = false
 
-
