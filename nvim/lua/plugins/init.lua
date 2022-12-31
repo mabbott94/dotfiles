@@ -1,5 +1,4 @@
 local plugins = {
-
   ["nvim-lua/plenary.nvim"] = { module = "plenary" },
 
   ["lewis6991/impatient.nvim"] = {},
@@ -16,7 +15,6 @@ local plugins = {
   ["NvChad/base46"] = {
     config = function()
       local ok, base46 = pcall(require, "base46")
-
       if ok then
         base46.load_theme()
       end
@@ -27,7 +25,6 @@ local plugins = {
     after = "base46",
     config = function()
       local present, nvchad_ui = pcall(require, "nvchad_ui")
-
       if present then
         nvchad_ui.setup()
       end

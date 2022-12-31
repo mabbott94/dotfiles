@@ -15,7 +15,7 @@ M.ui = {
   hl_override = {},
   changed_themes = {},
   theme_toggle = { "onedark", "one_light" },
-  theme = "onedark", -- default theme
+  theme = "rosepine", -- default theme
   transparency = false,
 }
 
